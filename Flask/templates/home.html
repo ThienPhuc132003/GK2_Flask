@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sticky Notes App</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <div class="header">
+        <h1>Sticky Notes App</h1>
+        <h3>Create a new note:</h3>
+        <form action="/add_note" method="post">
+            <!-- Input fields for adding a new note -->
+            <input type="text" name="note_text" placeholder="Take a note..." style="color: grey; width: 400px">
+            <select name="note_color">
+                <!-- Options for note color selection -->
+                <option value="yellow">Yellow</option>
+                <option value="lightblue">Blue</option>
+                <option value="pink">Pink</option>
+            </select>
+            <button type="submit">Add</button>
+        </form>
+    </div>
+
+    <div class="note-container">
+        {% for note in notes %}
+        <!-- Display existing notes -->
+        <div class="note {{ note.color }}">
+            <p>{{ note.text }}</p>
+            <!-- Form for deleting a note -->
+            <form action="/delete_note/{{ loop.index0 }}" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

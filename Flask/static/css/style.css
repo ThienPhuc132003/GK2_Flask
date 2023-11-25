@@ -1,0 +1,51 @@
+/* CSS styles for the app */
+body {
+  margin: 0;
+  padding:0 ;
+  font-family: Arial, sans-serif;
+  background-color: antiquewhite;
+}
+
+.header {
+  background-color: #e59191;
+  padding: 20px;
+  text-align: center;
+}
+
+.note-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10%;
+  box-sizing: border-box;
+}
+
+.note {
+  width: calc(20% - 20px);
+  height: 300px;
+  border: 2px solid #ccc;
+  border-radius: 10%;
+  margin: 0 10px 30px 10px;
+  padding: 10px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+button{
+  border: 2px solid #ccc;
+  border-radius: 10%;
+}
+.yellow {
+  background-color: #feff9c;
+}
+
+.lightblue {
+  background-color: lightblue;
+}
+
+.pink {
+  background-color: pink;
+}
